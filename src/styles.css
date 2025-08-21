@@ -1,0 +1,118 @@
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family:  'Noto Sans', sans-serif;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background: url("./asset/night.jpg") no-repeat center center fixed;
+  background-size: cover;
+
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+.content{
+  padding: 20px;
+} 
+
+.searchBar{
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  
+}
+
+.searchInput{
+  padding: 5px 5px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 18px;
+}
+
+.searchInput::placeholder {
+  color: white;
+  opacity: 1; 
+}
+
+.searchBtn {
+  padding: 2px 20px;
+  background-color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2 ease;
+}
+
+.searchBtn:active{
+  transform: scale(1.1);
+} 
+
+.weatherData{
+  position: absolute;
+  top: 30%;
+  left: 10%;
+}
+
+.currentCondition{
+  font-size: 16px;
+  color: #fff;
+  line-height: 1;
+}
+.address{
+  color: #fff;
+  font-size: 60px;
+  font-weight: bold;
+  text-transform: capitalize;
+  line-height: 1;
+}
+
+.tempDiv{
+  font-size: 150px;
+  color: white;
+  
+}
+
+
