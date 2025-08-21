@@ -18,15 +18,30 @@ export function renderSearchBar(){
 export function renderWeather(data){
     console.log(data);
     const weatherData = document.getElementById('weatherData');
+    weatherData.innerHTML = "";
     const currentCondition = createElement('p', 'currentCondition');
     const address = createElement('p', 'address');
+    const weatherDetails = createElement('div', 'weatherDetails');
     const tempDiv = createElement('div', 'tempDiv');
+    const details = createElement('div', 'details');
+    const feelsLike = createElement('p', 'feelsLike');
+    const windspeed = createElement('p', 'windspeed');
+    const humidity = createElement('p', 'humidity');
+
     currentCondition.textContent = data.current.conditions;
     address.textContent= data.address;
-    tempDiv.textContent = `${fahrenheitToCelsius(data.current.temp)}C`;
+    tempDiv.innerHTML = `${fahrenheitToCelsius(data.current.temp)}<sup class='suptext'>°C</sup>`;
+    feelsLike.innerHTML = `Feels Like: ${fahrenheitToCelsius(data.current.feelsLike)}<sup>°C</sup>`;
+    windspeed.textContent = `Wind Speed: ${data.current.windspeed} MPH`;
+    humidity.textContent =`Humidity: ${data.current.humidity}%`;
+
+    details.append(feelsLike, windspeed, humidity);
+
     weatherData.appendChild(currentCondition);
     weatherData.appendChild(address);
-    weatherData.appendChild(tempDiv);
+    weatherDetails.appendChild(tempDiv);
+    weatherDetails.appendChild(details);
+    weatherData.appendChild(weatherDetails);
     
 
 }

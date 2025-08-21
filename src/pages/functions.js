@@ -1,3 +1,12 @@
+import nightImg from "../asset/night.jpg";
+import sunnyImg from "../asset/sunny.jpg";
+import foggyImg from "../asset/fog-mist.jpg";
+import snowyImg from "../asset/snowy.jpg";
+import rainyImg from "../asset/rain.jpg";
+import thunderImg from "../asset/thunder.jpg";
+import cloudyImg from "../asset/cloudy.jpg";
+import windyImg from "../asset/windy.jpg";
+
 export async function getApiData(location) {
   const response = await fetch(
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${encodeURIComponent(
@@ -48,21 +57,38 @@ export function createImg(src, alt){
 export function fahrenheitToCelsius(temp){
   let degree =  (temp - 32) * 5 / 9;
   return Math.ceil(degree);
+} 
+
+export function showLoader() {
+  document.getElementById("loader").style.display = "flex";
 }
 
-function setWeatherBackground(condition) {
-  const body = document.body;
+export function hideLoader() {
+  document.getElementById("loader").style.display = "none";
+}
 
-  if (condition.includes("Sunny")) {
-    body.style.backgroundImage = "url('sunny.jpg')";
-  } else if (condition.includes("Rain")) {
-    body.style.backgroundImage = "url('rainy.jpg')";
-  } else if (condition.includes("Cloud")) {
-    body.style.backgroundImage = "url('cloudy.jpg')";
-  } else {
-    body.style.backgroundImage = "url('default.jpg')";
+export function setWeatherBackground(condition) {
+  const body = document.body;
+  const cond = condition.toLowerCase().split(" ")[0].replace(/[^a-z]/g, ""); 
+
+  let bgImage = nightImg; 
+
+  if (cond === "sunny" || cond === "clear") {
+    bgImage = sunnyImg;
+  } else if (cond === "cloud" || cond === "overcast" || cond === "partially") {
+    bgImage = cloudyImg;
+  } else if (cond === "rain" || cond === "drizzle" || cond === "showers") {
+    bgImage = rainyImg;
+  } else if (cond === "thunder") {
+    bgImage = thunderImg;
+  } else if (cond === "snow") {
+    bgImage = snowyImg;
+  } else if (cond === "fog" || cond === "haze" || cond === "mist") {
+    bgImage = foggyImg;
+  } else if (cond === "wind") {
+    bgImage = windyImg;
   }
 
-  body.style.backgroundSize = "cover";
-  body.style.backgroundPosition = "center";
+  body.style.background = `url('${bgImage}') no-repeat center center fixed`;
+  
 }

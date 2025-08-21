@@ -112,7 +112,73 @@ h1, h2, h3, h4, h5, h6 {
 .tempDiv{
   font-size: 150px;
   color: white;
-  
 }
+
+.suptext{
+  font-size: 50px;
+  vertical-align: 90px;;   /* pushes it up */
+}
+
+.weatherDetails {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  gap: 10px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 5px 0 5px 30px;
+}
+
+
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4); /* semi-transparent dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+
+.spinner {
+  border: 10px solid #f3f3f3;      /* Light gray */
+  border-top: 10px solid #3498db;  /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.errorText{
+  padding:  20px 10px;
+  /* color: red; */
+  /* background-color: #fff; */
+  font-size: 20px;
+  border-radius: 10px;
+  color: #842029;              /* dark red text */
+  background-color: #f8d7da;   /* light red/pink background */
+  border: 1px solid #f5c2c7;
+
+}
+
+
 
 
