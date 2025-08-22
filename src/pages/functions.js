@@ -1,5 +1,6 @@
 import nightImg from "../asset/night.jpg";
 import sunnyImg from "../asset/sunny.jpg";
+import sunnyImg1 from "../asset/sunny1.jpg";
 import foggyImg from "../asset/fog-mist.jpg";
 import snowyImg from "../asset/snowy.jpg";
 import rainyImg from "../asset/rain.jpg";
@@ -28,6 +29,7 @@ export function dataObj(rawData) {
       feelsLike: rawData.currentConditions.feelslike,
       humidity: rawData.currentConditions.humidity,
       windspeed: rawData.currentConditions.windspeed,
+      date: rawData.days[0].datetime,
     },
     forecast: rawData.days.slice(0, 7).map((day) => ({
       date: day.datetime,
@@ -74,7 +76,7 @@ export function setWeatherBackground(condition) {
   let bgImage = nightImg; 
 
   if (cond === "sunny" || cond === "clear") {
-    bgImage = sunnyImg;
+    bgImage = sunnyImg1;
   } else if (cond === "cloud" || cond === "overcast" || cond === "partially") {
     bgImage = cloudyImg;
   } else if (cond === "rain" || cond === "drizzle" || cond === "showers") {

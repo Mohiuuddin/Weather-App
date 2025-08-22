@@ -92,14 +92,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .weatherData{
   position: absolute;
-  top: 30%;
+  top: 15%;
   left: 10%;
 }
 
-.currentCondition{
+.currentDate{
   font-size: 16px;
   color: #fff;
-  line-height: 1;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+.currentCondition{
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 2px;
+  font-weight: bold;
 }
 .address{
   color: #fff;
@@ -110,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tempDiv{
-  font-size: 150px;
+  font-size: 140px;
   color: white;
 }
 
@@ -160,6 +167,48 @@ h1, h2, h3, h4, h5, h6 {
   width: 80px;
   height: 80px;
   animation: spin 1s linear infinite;
+} 
+
+#forecast {
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  gap: 25px; 
+  /* justify-content: center; */
+
+
+}
+
+.forecast-day {
+  text-align: center;
+  color: white; 
+  background: rgba(149, 148, 148, 0.6); 
+  padding: 15px; 
+  border-radius: 12px; 
+  width: 120px; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.weatherIcon {
+  /* color: #FFA500;  */
+  color: #fff;
+  font-size: 30px;
+} 
+.day {
+margin: 8px 0; 
+font-weight: bold;
+}
+
+.temp {
+  font-weight: bolder;
+}
+
+.current {
+  font-size: 14px;
+  margin-top: 5px;
 }
 
 @keyframes spin {
@@ -169,12 +218,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .errorText{
   padding:  20px 10px;
-  /* color: red; */
-  /* background-color: #fff; */
   font-size: 20px;
   border-radius: 10px;
-  color: #842029;              /* dark red text */
-  background-color: #f8d7da;   /* light red/pink background */
+  color: #842029;              
+  background-color: #f8d7da;   
   border: 1px solid #f5c2c7;
 
 }

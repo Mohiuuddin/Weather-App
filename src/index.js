@@ -1,6 +1,7 @@
 import { renderWeather, renderSearchBar } from "./pages/weather";
 import { getApiData, showLoader, hideLoader, setWeatherBackground } from "./pages/functions";
 import "./styles.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 
 const {searchInput, searchBtn} = renderSearchBar();
