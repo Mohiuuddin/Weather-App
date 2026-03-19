@@ -38,14 +38,6 @@ The app follows a strict modular structure:
 
 ---
 
-## 📸 Screenshots
-
-| Desktop View | Mobile Responsive |
-| :--- | :--- |
-| ![Desktop Screenshot](https://via.placeholder.com/400x250?text=Weather+App+Desktop) | ![Mobile Screenshot](https://via.placeholder.com/200x350?text=Mobile+View) |
-
----
-
 ## ⚙️ How to Run Locally
 
 1.  Clone the repository:
